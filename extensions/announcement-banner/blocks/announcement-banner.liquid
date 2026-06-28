@@ -1,0 +1,30 @@
+{% assign announcement = shop.metafields.my_app.announcement.value %}
+
+{% if announcement != blank %}
+<div class="announcement-banner">
+  📢 {{ announcement }}
+</div>
+
+<style>
+.announcement-banner{
+  width:100%;
+  background:#ffcc00;
+  color:#000;
+  text-align:center;
+  padding:14px;
+  font-size:18px;
+  font-weight:600;
+}
+</style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "head",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": []
+}
+{% endschema %}
